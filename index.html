@@ -48,19 +48,34 @@
     <div class="modal__backdrop" id="modalBackdrop"></div>
 
     <div
-      class="modal__box"
+      class="modal__box modal__box--playlist"
       role="dialog"
       aria-modal="true"
-      aria-label="Vídeo"
+      aria-label="Playlist"
     >
-      <button class="modal__close" id="modalClose" type="button" aria-label="Fechar vídeo">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Fechar playlist">
         ✕
       </button>
 
-      <video id="modalVideo" controls playsinline preload="metadata">
-        <source src="assets/video.mp4" type="video/mp4">
-        Seu navegador não consegue reproduzir este vídeo.
-      </video>
+
+
+      <h2 class="modal__title">playlist <span>♪～(´ε｀ )</span></h2>
+
+      <ol class="playlist">
+        <li><span class="playlist__num">01</span><span class="playlist__song">Dream</span><span class="playlist__artist">Lalisa</span></li>
+        <li><span class="playlist__num">02</span><span class="playlist__song">Amoeba</span><span class="playlist__artist">Clairo</span></li>
+        <li><span class="playlist__num">03</span><span class="playlist__song">Life in the Vivid Dream</span><span class="playlist__artist">Grimes</span></li>
+        <li><span class="playlist__num">04</span><span class="playlist__song">Talk</span><span class="playlist__artist">beabadoobee</span></li>
+        <li><span class="playlist__num">05</span><span class="playlist__song">Maggots for Brain</span><span class="playlist__artist">Olivia Rodrigo</span></li>
+        <li><span class="playlist__num">06</span><span class="playlist__song">Disney Princess</span><span class="playlist__artist">Melanie Martinez</span></li>
+        <li><span class="playlist__num">07</span><span class="playlist__song">Eternal Sunshine</span><span class="playlist__artist">Ariana Grande</span></li>
+        <li><span class="playlist__num">08</span><span class="playlist__song">Ophelia</span><span class="playlist__artist">PinkPantheress</span></li>
+        <li><span class="playlist__num">09</span><span class="playlist__song">Saturn</span><span class="playlist__artist">SZA</span></li>
+        <li><span class="playlist__num">10</span><span class="playlist__song">Party 4 U</span><span class="playlist__artist">Charli XCX</span></li>
+        <li><span class="playlist__num">11</span><span class="playlist__song">Timeless</span><span class="playlist__artist">The Weeknd</span></li>
+        <li><span class="playlist__num">12</span><span class="playlist__song">Revolving Door</span><span class="playlist__artist">Tate McRae</span></li>
+        <li><span class="playlist__num">13</span><span class="playlist__song">Tell Me Lies</span><span class="playlist__artist">Odetari</span></li>
+      </ol>
     </div>
   </div>
 

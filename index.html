@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>amoeba - sawadika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+
+
+    <img class="header-img" src="assets/hero.jpg" alt="header">
+
+   
+    <div class="row">
+
+      <a class="thumb" href="sobre-1.html">
+        <img src="assets/foto-1.jpg" alt="foto1">
+      </a>
+
+      <a class="thumb" href="sobre-2.html">
+        <img src="assets/foto-2.jpg" alt="foto2">
+      </a>
+
+      <div class="vinyl-block">
+        <img class="vinyl" id="vinyl" src="assets/vinyl.png" alt="Vinil da Sawadika">
+      </div>
+
+    </div>
+
+    <button class="play-btn" id="playBtn">PRESS PLAY</button>
+
+  </main>
+
+
+  <div class="modal" id="videoModal">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__box">
+      <button class="modal__close" id="modalClose" aria-label="Fechar">✕</button>
+      <video id="modalVideo" controls playsinline>
+        
+        <source src="assets/video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

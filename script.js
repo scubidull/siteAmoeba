@@ -3,7 +3,6 @@ const vinyl = document.getElementById("vinyl");
 const modal = document.getElementById("videoModal");
 const modalBackdrop = document.getElementById("modalBackdrop");
 const modalClose = document.getElementById("modalClose");
-const modalVideo = document.getElementById("modalVideo");
 
 function openModal() {
   if (!modal) return;
@@ -14,11 +13,6 @@ function openModal() {
   document.body.classList.add("modal-open");
 
   modalClose?.focus();
-
-  if (modalVideo) {
-    modalVideo.currentTime = 0;
-    modalVideo.play().catch(() => {});
-  }
 }
 
 function closeModal() {
@@ -28,11 +22,6 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   vinyl?.classList.remove("is-playing");
   document.body.classList.remove("modal-open");
-
-  if (modalVideo) {
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-  }
 
   playBtn?.focus();
 }

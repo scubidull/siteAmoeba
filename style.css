@@ -26,6 +26,8 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
+body.modal-open { overflow: hidden; }
+
 :focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
@@ -175,6 +177,89 @@ a { color: inherit; text-decoration: none; }
   background: #000;
 }
 
+/* ---------- modal da playlist ---------- */
+.modal__box--playlist {
+  width: min(460px, 100%);
+  max-height: 86vh;
+  overflow-y: auto;
+  padding: clamp(28px, 6vw, 40px) clamp(20px, 5vw, 30px) 28px;
+  border: 1px solid rgba(217, 181, 121, 0.25);
+}
+
+.modal__decor {
+  position: absolute;
+  width: 58px;
+  height: auto;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.modal__decor--tl { top: -16px; left: -14px; transform: rotate(-14deg); }
+.modal__decor--tr { top: -14px; right: -16px; transform: rotate(12deg); width: 52px; }
+.modal__decor--bl { bottom: -12px; left: -16px; transform: rotate(10deg); width: 50px; }
+.modal__decor--br { bottom: -18px; right: -14px; transform: rotate(-10deg); }
+
+@media (max-width: 480px) {
+  .modal__decor { width: 42px; }
+  .modal__decor--tr, .modal__decor--bl { width: 38px; }
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--cream);
+}
+
+.modal__title span {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+.playlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.playlist li {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 4px;
+  border-bottom: 1px solid rgba(217, 181, 121, 0.15);
+}
+
+.playlist li:last-child { border-bottom: none; }
+
+.playlist__num {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--gold);
+}
+
+.playlist__song {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--cream);
+}
+
+.playlist__artist {
+  font-size: 0.78rem;
+  color: rgba(246, 235, 224, 0.6);
+  text-align: right;
+  white-space: nowrap;
+}
+
 .modal__close {
   position: absolute;
   top: -14px;
@@ -187,6 +272,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--black);
   font-size: 0.9rem;
   cursor: pointer;
+  z-index: 2;
 }
 
 
@@ -282,3 +368,75 @@ a { color: inherit; text-decoration: none; }
 }
 
 .back-link:hover { border-color: var(--gold); }
+
+/* ---------- decoração clicável (luvinha -> stan list) ---------- */
+.decor-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 22px auto 0;
+  padding: 10px 22px;
+  width: fit-content;
+  border: 1px solid rgba(217, 181, 121, 0.4);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.decor-link:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.3);
+  border-color: var(--gold);
+}
+
+.decor-link__icon {
+  width: 34px;
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+.decor-link__icon--flip { transform: scaleX(-1); }
+
+.decor-link:hover .decor-link__icon { transform: scale(1.12); }
+.decor-link:hover .decor-link__icon--flip { transform: scaleX(-1) scale(1.12); }
+
+.decor-link__text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---------- página da stan list ---------- */
+.stan-list__icon {
+  width: 64px;
+  height: auto;
+  margin: 0 auto 14px;
+}
+
+.story__box--center { text-align: center; }
+
+.stan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.stan-list li {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  background: rgba(217, 181, 121, 0.12);
+  border: 1px solid rgba(217, 181, 121, 0.4);
+  padding: 8px 16px;
+  border-radius: 999px;
+}
